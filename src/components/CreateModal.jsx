@@ -30,9 +30,9 @@ const CreateModal = ({handleSubmit,setFormCreateEmail,setFormCreateFname,setForm
   return (
     <>
     <Button type="primary" onClick={showModal}>
-       <span className=''>Create New User</span> 
+       <span className=''>Add User</span> 
     </Button>
-      <Modal title="Basic Modal" open={isModalOpen}  footer={null} onOk={handleOk} onCancel={handleCancel}>
+      <Modal title="Create User" open={isModalOpen}  footer={null} onOk={handleOk} onCancel={handleCancel}>
       <form onSubmit={(e) => e.preventDefault()} className="poppins">
             <div className="row mx-3">
                 <input type="email"   onChange={emailChange} className=' form-control shadow-none' placeholder='user@gmail.com' />

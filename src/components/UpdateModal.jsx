@@ -32,7 +32,7 @@ const UpdateModal = ({supplyId,clickUser,updUserId,setFormUpdEmail,setFormUpdFna
     <Button type="primary" onClick={showModal}>
        Edit
     </Button>
-      <Modal title="Basic Modal" open={isModalOpen} footer={null} onOk={handleOk} onCancel={handleCancel}>
+      <Modal title="Edit User" open={isModalOpen} footer={null} onOk={handleOk} onCancel={handleCancel}>
       <form onSubmit={(e) => e.preventDefault()} className="poppins">
           <div className="row mx-3">
               <input type="email"   onChange={emailChange} className='form-control shadow-none' placeholder='user@gmail.com' />
