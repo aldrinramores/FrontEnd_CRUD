@@ -5,10 +5,14 @@ body {
   height: 100%;
   background: rgb(14, 14, 14) !important;
 }
+body {
+  overflow-x: hidden;
+ }
 
 :root {
   --archivo: 'Archivo Black', sans-serif; 
   --poppins: 'Poppins', sans-serif;
+  --skyblue: rgb(16, 71, 134);
 }
 
 // SCROLL BAR 
@@ -88,13 +92,13 @@ body {
     transition: all 0.3s ease-in-out;
   }
   .btn_users:hover{
-    background-color: rgb(16, 71, 134);
-    border: 2px solid rgb(16, 71, 134);
+    background-color: var(--skyblue);
+    border: 2px solid var(--skyblue);
     transform: skewX(40deg);
     transform: skewY(-10deg);
     box-shadow: 2px 2px 1px rgba(255, 255, 255, 0.637);
  }
- .mail_me {
+.mail_me {
   transition: all 600ms ease-in-out;
 }
 .mail_me:hover {
@@ -110,6 +114,26 @@ body {
     font-family: var(--poppins);
     font-weight: bold;
  }
+ .mousePointer {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1100;
+  border: 5px solid var(--skyblue);
+  width: 2rem;
+  height: 2rem;
+  opacity: 70%;
+  background-color: none;
+  transform: translate(-50%, -50%);
+  transform-origin: 100% 100%;
+  pointer-events: none;
+  transition: all 300ms ease;
+  transition-property: transform,background-color,border;
+ }
+ .hovered {
+  border: none;
+  background-color: var(--skyblue);
+ }
+
  /* INPUT BOX */
  input[type=email], input[type=text] {
     border: none;
@@ -128,6 +152,40 @@ body {
  input[type=email]:focus  {
     outline: 2px solid gray !important;
  }
- body {
-  overflow-x: hidden;
+ .buttonSubmit {
+  background-color: var(--skyblue);
+  padding: 5px 15px;
+  border-radius: 10px;
  }
+//  BUBBLE THING
+ #wave-wrapper {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  
+  pointer-events: none;
+
+  & .wave {
+    height: 250px;
+    width: 250px;
+    background-color: var(--skyblue);
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    border-radius: 100%;
+    animation: waves 1s ease-in-out infinite;
+    opacity: 0;
+
+    @keyframes waves {
+      from,to {
+        transform: translate(-50%, 0%);
+      }
+      50% {
+        transform: translate(-50%, 20%);
+        opacity: 1;
+      }
+    }
+  }
+ }
+ 

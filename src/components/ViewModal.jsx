@@ -3,7 +3,7 @@ import { Modal, Checkbox, Form, Input, Button } from 'antd';
 import defaultImage from '../assets/defaultImage.jpg'
 
 
-const ViewModal = ({userAvatar, userEmail, userFName, userLName}) => {
+const ViewModal = ({userAvatar, userEmail, userFName, userLName,className}) => {
   // TOGGLE MODAL
   const [isModalOpen, setIsModalOpen] = useState(false)
   const showModal = () => {
@@ -16,10 +16,10 @@ const ViewModal = ({userAvatar, userEmail, userFName, userLName}) => {
 
   return (
     <>
-    <Button type="green" onClick={showModal}>
+    <Button className={`${className}`}  type="green" onClick={showModal}>
        View
     </Button>
-      <Modal title="View Profile" open={isModalOpen} onCancel={handleCancel}>
+      <Modal title="View Profile" footer={null} open={isModalOpen} onCancel={handleCancel}>
       <div className='d-flex flex-column justify-content-center text-center gap-1  modal_description'>
           <img src={userAvatar || defaultImage}/>
             <p> Email: {userEmail || "no information provided"}</p>

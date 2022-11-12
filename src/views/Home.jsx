@@ -3,8 +3,26 @@ import {Link} from 'react-router-dom'
 
 
 const Home = () => {
+  // Wave animation
+  const animateWave = (x) => {
+    const wrapper = document.getElementById('wave-wrapper')
+    const wave = document.createElement("div")
+    wave.className = "wave"
+    wave.style.left = `${x}px`
+    wrapper.appendChild(wave)
+    setTimeout(() => wrapper.removeChild(wave),600)
+  }
+  window.onmousemove = (e) => {
+    animateWave(e.clientX)
+    console.log(e)
+  } 
+  
+
+  
+
   return (
     <div class="h-100 d-flex align-items-center justify-content-center">
+        <div id="wave-wrapper"></div>
         <div className='text-center wrapper'>
             <div className="container"> 
                 <h1 className='archivo display-1'>

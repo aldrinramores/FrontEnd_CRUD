@@ -5,9 +5,14 @@ body {
   background: #0e0e0e !important;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 :root {
   --archivo: 'Archivo Black', sans-serif;
   --poppins: 'Poppins', sans-serif;
+  --skyblue: rgb(16, 71, 134);
 }
 
 /* width */
@@ -118,8 +123,8 @@ body {
 }
 
 .btn_users:hover {
-  background-color: #104786;
-  border: 2px solid #104786;
+  background-color: var(--skyblue);
+  border: 2px solid var(--skyblue);
   -webkit-transform: skewX(40deg);
           transform: skewX(40deg);
   -webkit-transform: skewY(-10deg);
@@ -146,6 +151,33 @@ body {
 .modal_description {
   font-family: var(--poppins);
   font-weight: bold;
+}
+
+.mousePointer {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1100;
+  border: 5px solid var(--skyblue);
+  width: 2rem;
+  height: 2rem;
+  opacity: 70%;
+  background-color: none;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+  pointer-events: none;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  -webkit-transition-property: background-color,border,-webkit-transform;
+  transition-property: background-color,border,-webkit-transform;
+  transition-property: transform,background-color,border;
+  transition-property: transform,background-color,border,-webkit-transform;
+}
+
+.hovered {
+  border: none;
+  background-color: var(--skyblue);
 }
 
 /* INPUT BOX */
@@ -198,7 +230,54 @@ input[type=email]:focus {
   outline: 2px solid gray !important;
 }
 
-body {
-  overflow-x: hidden;
+.buttonSubmit {
+  background-color: var(--skyblue);
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+#wave-wrapper {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  pointer-events: none;
+}
+
+#wave-wrapper .wave {
+  height: 250px;
+  width: 250px;
+  background-color: var(--skyblue);
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  border-radius: 100%;
+  -webkit-animation: waves 1s ease-in-out infinite;
+          animation: waves 1s ease-in-out infinite;
+  opacity: 0;
+}
+
+@-webkit-keyframes waves {
+  from, to {
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+  }
+  50% {
+    -webkit-transform: translate(-50%, 20%);
+            transform: translate(-50%, 20%);
+    opacity: 1;
+  }
+}
+
+@keyframes waves {
+  from, to {
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+  }
+  50% {
+    -webkit-transform: translate(-50%, 20%);
+            transform: translate(-50%, 20%);
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=index.css.map */
